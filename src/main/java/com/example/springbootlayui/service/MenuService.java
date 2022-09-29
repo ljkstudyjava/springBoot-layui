@@ -1,5 +1,8 @@
 package com.example.springbootlayui.service;
 
-public interface Menu {
+import java.util.Map;
 
+public interface MenuService {
+
+    Map<String, Object> findMenu(Integer id);
 }

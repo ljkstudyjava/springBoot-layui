@@ -11,39 +11,39 @@
     <div class="layui-header">
         <div class="layui-logo layui-hide-xs layui-bg-black">CRM后台</div>
         <!-- 头部区域（可配合layui 已有的水平导航） -->
-        <ul class="layui-nav layui-layout-left">
-            <!-- 移动端显示 -->
-            <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">
-                <i class="layui-icon layui-icon-spread-left"></i>
-            </li>
+        <!--        <ul class="layui-nav layui-layout-left">-->
+        <!--            &lt;!&ndash; 移动端显示 &ndash;&gt;-->
+        <!--            <li class="layui-nav-item layui-show-xs-inline-block layui-hide-sm" lay-header-event="menuLeft">-->
+        <!--                <i class="layui-icon layui-icon-spread-left"></i>-->
+        <!--            </li>-->
 
-            <li class="layui-nav-item layui-hide-xs"><a href="">nav 1</a></li>
-            <li class="layui-nav-item layui-hide-xs"><a href="">nav 2</a></li>
-            <li class="layui-nav-item layui-hide-xs"><a href="">nav 3</a></li>
-            <li class="layui-nav-item">
-                <a href="javascript:;">nav groups</a>
-                <dl class="layui-nav-child">
-                    <dd><a href="">menu 11</a></dd>
-                    <dd><a href="">menu 22</a></dd>
-                    <dd><a href="">menu 33</a></dd>
-                </dl>
-            </li>
-        </ul>
+        <!--            <li class="layui-nav-item layui-hide-xs"><a href="">nav 1</a></li>-->
+        <!--            <li class="layui-nav-item layui-hide-xs"><a href="">nav 2</a></li>-->
+        <!--            <li class="layui-nav-item layui-hide-xs"><a href="">nav 3</a></li>-->
+        <!--            <li class="layui-nav-item">-->
+        <!--                <a href="javascript:;">nav groups</a>-->
+        <!--                <dl class="layui-nav-child">-->
+        <!--                    <dd><a href="">menu 11</a></dd>-->
+        <!--                    <dd><a href="">menu 22</a></dd>-->
+        <!--                    <dd><a href="">menu 33</a></dd>-->
+        <!--                </dl>-->
+        <!--            </li>-->
+        <!--        </ul>-->
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item layui-hide layui-show-md-inline-block">
                 <a href="javascript:;">
                     <img src="//tva1.sinaimg.cn/crop.0.0.118.118.180/5db11ff4gw1e77d3nqrv8j203b03cweg.jpg"
                          class="layui-nav-img">
-                    tester
+                    <span th:text="${session.loginInfo.userName}"></span>
                 </a>
                 <dl class="layui-nav-child">
                     <dd><a href="">Your Profile</a></dd>
                     <dd><a href="">Settings</a></dd>
-                    <dd><a href="">Sign out</a></dd>
+                    <dd><a href="/user/logout">Sign out</a></dd>
                 </dl>
             </li>
             <li class="layui-nav-item" lay-header-event="menuRight" lay-unselect>
-                <a href="">
+                <a href="javascript:;">
                     <i class="layui-icon layui-icon-more-vertical"></i>
                 </a>
             </li>
@@ -51,70 +51,27 @@
     </div>
 
     <div class="layui-side layui-bg-black">
-        <div class="layui-side-scroll">
 
-            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                <li class="layui-nav-item">
-                    <a class="" href="javascript:;">营销管理</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="" target="myFrame">营销机会管理</a></dd>
-                        <dd><a href="" target="myFrame">客户开发计划</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item ">
-                    <a href="javascript:;">客户管理</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="" target="myFrame">客户信息管理</a></dd>
-                        <dd><a href="" target="myFrame">客户流失管理</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item ">
-                    <a href="javascript:;">服务管理</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="" target="myFrame">服务创建</a></dd>
-                        <dd><a href="" target="myFrame">服务分配</a></dd>
-                        <dd><a href="" target="myFrame">服务处理</a></dd>
-                        <dd><a href="" target="myFrame">服务反馈</a></dd>
-                        <dd><a href="" target="myFrame">服务归档</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item ">
-                    <a href="javascript:;">统计报表</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="" target="myFrame">客户贡献分析</a></dd>
-                        <dd><a href="" target="myFrame">客户构成分析</a></dd>
-                        <dd><a href="" target="myFrame">客户服务分析</a></dd>
-                        <dd><a href="" target="myFrame">客户流失分析</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item ">
-                    <a href="javascript:;">基础数据管理</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="" target="myFrame">数据字典管理</a></dd>
-                        <dd><a href="" target="myFrame">产品信息查询</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item ">
-                    <a href="javascript:;">系统管理</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="" target="myFrame">用户管理</a></dd>
-                        <dd><a href="" target="myFrame">角色管理</a></dd>
-                        <dd><a href="" target="myFrame">菜单管理</a></dd>
-                        <dd><a href="" target="myFrame">demo</a></dd>
-                        <dd><a href="" target="myFrame">32131221</a></dd>
-                        <dd><a href="" target="修改密码">修改密码</a></dd>
-                    </dl>
-                </li>
-            </ul>
+        <div class="layui-side-scroll">
         </div>
     </div>
 
     <div class="layui-body">
-        <!-- 内容主体区域 -->
-        <!--        <div style="padding: 15px;">内容主体区域。记得修改 layui.css 和 js 的路径</div>-->
+        <div class="layui-tab" lay-filter="demo" lay-allowclose="true" style="height: 100%">
+            <ul class="layui-tab-title">
 
-        <iframe name="myFrame" width="100%" height="100%"></iframe>
+                <li class="layui-this" lay-allowclose="false" lay-id="11">首页</li>
+
+            </ul>
+            <div class="layui-tab-content" style="height: 100%;border-style: none">
+                <div class="layui-tab-item layui-show" style="height: 100%">内容1</div>
+            </div>
+
+            <!-- 内容主体区域 -->
+            <!--        <div style="padding: 15px;">内容主体区域。记得修改 layui.css 和 js 的路径</div>-->
+
+            <!--        <iframe name="myFrame" width="100%" height="100%"></iframe>-->
+        </div>
     </div>
 
     <div class="layui-footer">
@@ -125,11 +82,48 @@
 <script th:src="@{/layui/layui.js}"></script>
 <script>
     //JS
+    let element, $
     layui.use(['element', 'layer', 'util'], function () {
-        const element = layui.element
-            , layer = layui.layer
+        const layer = layui.layer
             , util = layui.util
-            , $ = layui.$;
+
+        $ = layui.$;
+        element = layui.element
+        $.ajax({
+            type: "get",
+            url: "menu",
+            dataType: "json",
+            success: function (data) {
+                getMenus(data)
+                layui.element.init();
+            }
+        })
+
+
+        const getMenus = function (data) {
+            //回显选中
+            let ul = $("<ul class='layui-nav layui-nav-tree' lay-filter='test'></ul>");
+            for (let i = 0; i < data.menu.length; i++) {
+                let node = data.menu[i];
+                let li = $("<li class='layui-nav-item' ></li>");
+                let a = $("<a class='' href='javascript:;'>" + node.menuName + "</a>");
+                li.append(a);
+                //获取子节点
+                let childArry = node.titleNode;
+                if (childArry.length > 0) {
+                    let dl = $("<dl class='layui-nav-child'></dl>");
+                    for (let y in childArry) {
+                        //+ childArry[y].menuUrl + target="myFrame"
+                        let dd = $("<dd><a href='javascript:;' attribute = '" + childArry[y].menuName + "' onclick='openTabs(\"" + childArry[y].menuName + "\", \"" + childArry[y].menuUrl + "\" ," + childArry[y].id + ")' >" + childArry[y].menuName + "</a></dd>");
+                        dl.append(dd);
+                    }
+                    li.append(dl);
+                }
+                ul.append(li);
+            }
+            $(".layui-side-scroll").append(ul);
+        }
+
 
         //头部事件
         util.event('lay-header-event', {
@@ -150,6 +144,26 @@
         });
 
     });
+
+    function openTabs(title, url, id) {
+        let $node = $("li[lay-id='" + id + "']");
+        // console.log($node)
+        // console.log($node.prevObject)
+        // console.log($node.length)
+        // console.log($node.prevObject.length)
+        if ($node.length === 0) {
+            element.tabAdd('demo', {
+                title: title,
+                content: "<iframe frameborder='0' src='" + url + "' scrolling='auto' style='width:100%;height:100%;'></iframe>",
+                id: id
+            })
+            $(".layui-tab-item").css('height','100%')
+        }
+
+        element.tabChange('demo', id);
+    }
+
+
 </script>
 </body>
 </html>

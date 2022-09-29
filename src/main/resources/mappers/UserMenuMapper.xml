@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="">
+<mapper namespace="com.example.springbootlayui.dao.UserMenuMapper">
+
+
+    <resultMap id="userMenu" type="com.example.springbootlayui.entity.UserMenu">
+        <id column="id" property="id"/>
+        <result column="menu_name" property="menuName"/>
+        <result column="menu_url" property="menuUrl"/>
+        <result column="pid" property="pid"/>
+        <result column="is_valid" property="isValid"/>
+    </resultMap>
+
+    <select id="getUserMenu" resultMap="userMenu">
+        select t_menu.id, t_menu.menu_name, t_menu.menu_url, t_menu.pid, t_menu.is_valid
+        from t_menu
+                 INNER JOIN t_role_menu ON t_menu.id = t_role_menu.menu_id
+        where t_role_menu.role_id = #{id} and pid = 0
+    </select>
+
+    <select id="getMenu" resultMap="userMenu">
+        select t_menu.id, t_menu.menu_name, t_menu.menu_url, t_menu.pid, t_menu.is_valid
+        from t_menu
+        where pid = #{pid}
+    </select>
 
 </mapper>

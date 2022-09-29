@@ -1,4 +1,4 @@
-package com.example.springbootlayui.entity;
+package com.example.springbootlayui.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,8 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CommonResult<T> {
+public class SaleChanceDto {
     private Integer code;
     private String msg;
-    T date;
+    private Integer count;
+    private Object data;
 }

@@ -5,10 +5,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class LoginInfo {
-    private String userName;
-    private String password;
-    private Integer roleId;
+@NoArgsConstructor
+public class BaseQuery {
+    //current page
+    private int page;
+
+    //each page
+    private int limit;
 }

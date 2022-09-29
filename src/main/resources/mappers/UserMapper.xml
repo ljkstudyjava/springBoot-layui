@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="">
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.springbootlayui.dao.UserMapper">
+
+
+    <select id="doLogin" resultType="com.example.springbootlayui.entity.LoginInfo">
+        select *
+        from t_user
+        where user_name = #{userName}
+          and user_pwd = #{password}
+          and role_id = #{roleId}
+    </select>
+    <select id="getAllUser" resultType="com.example.springbootlayui.entity.User">
+        select * from t_user
+    </select>
+
 
 </mapper>
