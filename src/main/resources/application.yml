@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://121.37.90.193:3306/ljk
-    username: root
-    password: Ljk123456
+    url: jdbc:mysql://121.37.90.193:3306/***
+    username: ****
+    password: ****
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
