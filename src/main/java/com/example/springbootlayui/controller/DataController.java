@@ -1,8 +1,8 @@
 package com.example.springbootlayui.controller;
 
-import com.example.springbootlayui.dto.SaleChanceDto;
-import com.example.springbootlayui.entity.BaseQuery;
+import com.example.springbootlayui.dto.LayuiDto;
 import com.example.springbootlayui.entity.SaleChance;
+import com.example.springbootlayui.info.SaleChanceInfo;
 import com.example.springbootlayui.service.SaleChanceService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -29,23 +29,30 @@ public class DataController {
 
     Logger logger = LoggerFactory.getLogger(getClass());
 
-    @GetMapping("/getAllSaleChance")
+
+    /**
+     * 获取销售机会的数据
+     *
+     * @param saleChanceInfo
+     * @return
+     */
+    @GetMapping("/getSaleChanceList")
     @ResponseBody
-    public SaleChanceDto getAllSaleChance(BaseQuery baseQuery) {
+    public LayuiDto getAllSaleChance(SaleChanceInfo saleChanceInfo) {
 
 
         logger.info("查询列表");
 
         logger.info("baseQuery.getLimit()");
-        logger.info("{}", baseQuery);
-        PageHelper.startPage(baseQuery.getPage(), baseQuery.getLimit());
+        logger.info("{}", saleChanceInfo);
+        PageHelper.startPage(saleChanceInfo.getPage(), saleChanceInfo.getLimit());
 
-        List<SaleChance> list = saleChanceService.getAllList();
+        List<SaleChance> list = saleChanceService.getAllList(saleChanceInfo);
 
         PageInfo<SaleChance> pageInfo = new PageInfo<>(list);
 
         long total = pageInfo.getTotal();
 
-        return new SaleChanceDto(LAYUI_SUCCESS_CODE, SUCCESS_MSG, (int) total, pageInfo.getList());
+        return new LayuiDto(LAYUI_SUCCESS_CODE, SUCCESS_MSG, (int) total, pageInfo.getList());
     }
 }

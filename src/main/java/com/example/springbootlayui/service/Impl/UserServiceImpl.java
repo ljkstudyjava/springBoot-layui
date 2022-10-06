@@ -2,9 +2,8 @@ package com.example.springbootlayui.service.Impl;
 
 import com.example.springbootlayui.dao.UserMapper;
 import com.example.springbootlayui.entity.CommonResult;
-import com.example.springbootlayui.entity.LoginInfo;
+import com.example.springbootlayui.info.LoginInfo;
 import com.example.springbootlayui.service.UserService;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

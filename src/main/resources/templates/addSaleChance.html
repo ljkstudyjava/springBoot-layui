@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>添加</title>
+    <link rel="stylesheet" th:href="@{/layui/css/layui.css}" media="all">
+    <script type="text/javascript" th:src="@{/jquery-easyui-1.3.3/jquery.min.js}"></script>
+</head>
+<body>
+<form class="layui-form" action="">
+    <div class="layui-form-item">
+        <label class="layui-form-label">请输入机会来源</label>
+        <div class="layui-input-block">
+            <input type="text" name="chanceSource" required lay-verify="required" placeholder="请输入机会来源"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">请输入机会来源</label>
+        <div class="layui-input-block">
+            <input type="text" name="customerName" required lay-verify="required" placeholder="请输入客户名称"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">请输入机会来源</label>
+        <div class="layui-input-block">
+            <input type="text" name="cgjl" required lay-verify="required" placeholder="请输入成功几率"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">请输入机会来源</label>
+        <div class="layui-input-block">
+            <input type="text" name="overview" required lay-verify="required" placeholder="请输入概要"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">请输入机会来源</label>
+        <div class="layui-input-block">
+            <input type="text" name="linkMan" required lay-verify="required" placeholder="请输入联系人"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">请输入机会来源</label>
+        <div class="layui-input-block">
+            <input type="text" name="linkPhone" required lay-verify="required" placeholder="请输入手机号"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">请输入机会来源</label>
+        <div class="layui-input-block">
+            <input type="text" name="description" required lay-verify="required" placeholder="请输入描述"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">请输入机会来源</label>
+        <div class="layui-input-block">
+            <input type="text" name="createMan" required lay-verify="required" placeholder="请输入创建人"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">请输入机会来源</label>
+        <div class="layui-input-block">
+            <input type="text" name="assignMan" required lay-verify="required" placeholder="请输入分配人"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-inline">
+            <label class="layui-form-label">分配时间</label>
+            <div class="layui-input-inline">
+                <input type="text"
+                       class="layui-input"
+                       id="test5"
+                       name="assignTime"
+                       placeholder="yyyy-MM-dd HH:mm:ss">
+            </div>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">请输入机会来源</label>
+        <div class="layui-input-block">
+            <input type="text" name="state" required lay-verify="required" placeholder="请输入分配状态"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">请输入机会来源</label>
+        <div class="layui-input-block">
+            <input type="text" name="devResult" required lay-verify="required" placeholder="开发结果" autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">请输入机会来源</label>
+        <div class="layui-input-block">
+            <input type="text" name="isValid" required lay-verify="required" placeholder="请输入有效状态"
+                   autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+
+</div>
+<script th:src="@{/layui/layui.js}"></script>
+<script>
+    //Demo
+    layui.use('form', function () {
+        let form = layui.form;
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            console.log(data.field)
+            $.ajax({
+                type: "post",
+                url: "saleChance/insert",
+                data: JSON.stringify(data.field),
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+
+                    //TODO-返回判断
+                    if (data.code === 200) {
+                        alert(data)
+                    } else {
+                        alert(data.msg)
+                    }
+                }
+            })
+            //layer.msg(JSON.stringify(data.field));
+            return false;
+        });
+    });
+    layui.use('laydate', function () {
+        let laydate = layui.laydate;
+
+
+        laydate.render({
+            elem: '#test5'
+            , type: 'datetime'
+        });
+    });
+</script>
+</body>
+</html>

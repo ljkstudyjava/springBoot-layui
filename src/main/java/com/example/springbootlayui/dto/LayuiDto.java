@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class SaleChanceDto {
+public class LayuiDto {
     private Integer code;
     private String msg;
     private Integer count;

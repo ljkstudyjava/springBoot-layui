@@ -28,7 +28,7 @@ public class test {
 
     @Test
     public void testSale() {
-        System.out.println("saleChanceMapper.getAll() = " + saleChanceMapper.getAll());
+        System.out.println("saleChanceMapper.getAll() = " + saleChanceMapper.getAll(null));
     }
 
     @Test

@@ -11,4 +11,8 @@ public class CommonResult<T> {
     private Integer code;
     private String msg;
     T date;
+
+    public CommonResult(T date) {
+        this.date = date;
+    }
 }

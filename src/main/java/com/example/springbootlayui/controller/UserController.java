@@ -1,19 +1,16 @@
 package com.example.springbootlayui.controller;
 
 import com.example.springbootlayui.entity.CommonResult;
-import com.example.springbootlayui.entity.LoginInfo;
+import com.example.springbootlayui.info.LoginInfo;
 import com.example.springbootlayui.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import static com.example.springbootlayui.entity.ResultCode.*;
 
 @Controller
 @RequestMapping("user")

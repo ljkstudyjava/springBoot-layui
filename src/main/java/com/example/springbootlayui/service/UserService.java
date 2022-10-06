@@ -1,7 +1,7 @@
 package com.example.springbootlayui.service;
 
 import com.example.springbootlayui.entity.CommonResult;
-import com.example.springbootlayui.entity.LoginInfo;
+import com.example.springbootlayui.info.LoginInfo;
 
 import javax.servlet.http.HttpServletRequest;
 

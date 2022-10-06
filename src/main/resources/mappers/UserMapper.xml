@@ -4,7 +4,7 @@
 <mapper namespace="com.example.springbootlayui.dao.UserMapper">
 
 
-    <select id="doLogin" resultType="com.example.springbootlayui.entity.LoginInfo">
+    <select id="doLogin" resultType="com.example.springbootlayui.info.LoginInfo">
         select *
         from t_user
         where user_name = #{userName}

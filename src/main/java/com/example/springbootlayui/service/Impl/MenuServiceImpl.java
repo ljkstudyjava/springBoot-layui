@@ -19,6 +19,8 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public Map<String, Object> findMenu(Integer id) {
         Map<String, Object> data = new HashMap<>();
+
+
         //按照pid获取到根目录进行存储对应的子目录
         List<UserMenu> navId = userMenuMapper.getUserMenu(id);
         for (UserMenu nav : navId) {

@@ -57,7 +57,7 @@
     </div>
 
     <div class="layui-body">
-        <div class="layui-tab" lay-filter="demo" lay-allowclose="true" style="height: 100%">
+        <div class="layui-tab" lay-filter="demo" lay-allowclose="true" style="height: 100%;border-style: none">
             <ul class="layui-tab-title">
 
                 <li class="layui-this" lay-allowclose="false" lay-id="11">首页</li>
@@ -114,7 +114,7 @@
                     let dl = $("<dl class='layui-nav-child'></dl>");
                     for (let y in childArry) {
                         //+ childArry[y].menuUrl + target="myFrame"
-                        let dd = $("<dd><a href='javascript:;' attribute = '" + childArry[y].menuName + "' onclick='openTabs(\"" + childArry[y].menuName + "\", \"" + childArry[y].menuUrl + "\" ," + childArry[y].id + ")' >" + childArry[y].menuName + "</a></dd>");
+                        let dd = $("<dd><a href='javascript:;'  onclick='openTabs(\"" + childArry[y].menuName + "\", \"" + childArry[y].menuUrl + "\" ," + childArry[y].id + ")' >" + childArry[y].menuName + "</a></dd>");
                         dl.append(dd);
                     }
                     li.append(dl);

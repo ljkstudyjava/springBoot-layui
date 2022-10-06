@@ -9,25 +9,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
+/**
+ * 主要用于页面的跳转
+ */
 @Controller
 public class PageController {
 
     Logger logger = LoggerFactory.getLogger(getClass());
 
     @RequestMapping("/")
-    public String test() {
+    public String login() {
         return "login";
     }
 
     @RequestMapping("saleChance")
-    public String test1() {
+    public String saleChance() {
         logger.info("机会页面");
         return "saleChance";
     }
 
     @GetMapping("demo")
-    public String test2(HttpServletRequest request, HttpServletResponse response) {
+    public String demo(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         System.out.println("session = " + session);
         if (session.getAttribute("loginInfo") == null) {
@@ -39,6 +41,22 @@ public class PageController {
         } else {
             return "demo";
         }
+    }
+
+
+    @GetMapping("addSaleChance")
+    public String addSaleChance() {
+        return "addSaleChance";
+    }
+
+    @GetMapping("index")
+    public String index() {
+        return "index";
+    }
+
+    @GetMapping("customer")
+    public String Customer() {
+        return "customer";
     }
 
 }

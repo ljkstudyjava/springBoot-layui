@@ -1,7 +1,7 @@
 package com.example.springbootlayui.controller;
 
 
-import com.example.springbootlayui.entity.LoginInfo;
+import com.example.springbootlayui.info.LoginInfo;
 import com.example.springbootlayui.service.MenuService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

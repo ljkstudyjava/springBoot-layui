@@ -1,8 +1,10 @@
 package com.example.springbootlayui.service.Impl;
 
 import com.example.springbootlayui.dao.SaleChanceMapper;
-import com.example.springbootlayui.dto.SaleChanceDto;
+import com.example.springbootlayui.dto.LayuiDto;
+import com.example.springbootlayui.entity.CommonResult;
 import com.example.springbootlayui.entity.SaleChance;
+import com.example.springbootlayui.info.SaleChanceInfo;
 import com.example.springbootlayui.service.SaleChanceService;
 import org.springframework.stereotype.Service;
 
@@ -18,13 +20,20 @@ public class SaleChanceServiceImpl implements SaleChanceService {
     @Resource
     private SaleChanceMapper saleChanceMapper;
 
+    /**
+     * 获取全部数据
+     *
+     * @return
+     */
     @Override
-    public SaleChanceDto getAll() {
-        return new SaleChanceDto(LAYUI_SUCCESS_CODE, SUCCESS_MSG, saleChanceMapper.getCount(), saleChanceMapper.getAll());
+    public List<SaleChance> getAllList(SaleChanceInfo saleChanceInfo) {
+        return saleChanceMapper.getAll(saleChanceInfo);
     }
 
     @Override
-    public List<SaleChance> getAllList() {
-        return saleChanceMapper.getAll();
+    public CommonResult<?> delete(Integer[] ids) {
+        //
+        System.out.println("Service"+"ids = " + ids);
+        return new CommonResult<>(SUCCESS_CODE,SUCCESS_MSG,saleChanceMapper.delete(ids));
     }
 }

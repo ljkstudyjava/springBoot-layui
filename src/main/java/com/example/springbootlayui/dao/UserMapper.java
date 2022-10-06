@@ -1,6 +1,6 @@
 package com.example.springbootlayui.dao;
 
-import com.example.springbootlayui.entity.LoginInfo;
+import com.example.springbootlayui.info.LoginInfo;
 import com.example.springbootlayui.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 

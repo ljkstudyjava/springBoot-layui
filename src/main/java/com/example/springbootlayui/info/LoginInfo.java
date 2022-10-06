@@ -1,4 +1,4 @@
-package com.example.springbootlayui.entity;
+package com.example.springbootlayui.info;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
