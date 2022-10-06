@@ -8,11 +8,11 @@ import java.util.Properties;
 public class SshConnectionTool {
 
     //ssh连接的用户名
-    private final static String SSH_USER = "root";
+    private final static String SSH_USER = "******";
     //ssh连接的密码
-    private final static String SSH_PASSWORD = "Ljk123456";
+    private final static String SSH_PASSWORD = "******";
     //ssh远程连接的ip地址
-    private final static String SSH_REMOTE_SERVER = "124.221.21.104";
+    private final static String SSH_REMOTE_SERVER = "******";
     //ssh连接的端口号
     private final static int SSH_REMOTE_PORT = 22;
     //本地mysql发起连接的IP地址
